@@ -163,7 +163,7 @@ public class DiscountServiceImplTest {
         Mockito.when(customerRepository.findById(1L)).thenReturn(Optional.of(regularCustomer));
         when(strategyFactory.getStrategy(any())).thenReturn(new RegularCustomerDiscountStrategy());
         BigDecimal finalAmount = discountServiceImpl.calculateFinalAmount(bill);
-        Assertions.assertEquals(new BigDecimal("0.0"), finalAmount); // 5% discount + bill-based discount
+        Assertions.assertEquals(new BigDecimal("0.00"), finalAmount);
     }
 
 
